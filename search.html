@@ -1,0 +1,87 @@
+<?php
+
+if(isset($_POST['submit'])){
+$valuetosearch=$_POST['valuetosearch'];
+$query="select * from d_table where concat (headline,description) like '%".$valuetosearch."%' ";
+search_result=filterTable($query);
+}
+else{
+$query="SELECT * from d_table";
+search_result=filterTable($query);
+}
+function filterTable($query)
+{
+require_once("db_connect.php");
+$filter_result=mysqli_query($conn,$query);
+return $filter_result;
+}
+
+
+?>
+
+
+
+<html>
+<head>
+
+<title>
+Medicine List
+</title>
+<link href="search.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="total">
+<div id="sidebar">
+<div class="toggle-btn" onclick="toggleSidebar()">
+<script>
+function toggleSidebar(){
+document.getElementById("sidebar").classList.toggle('active');
+}
+</script>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<ul>
+<li>HOME</li>
+<li>ABOUT</li>
+<li>CONTACT</li>
+</ul>
+</div>
+<div class="search">
+<form name="usrform" method="post" action="search.html">
+  <input type="text" name="valuetosearch" placeholder="Search..">
+  <input type="submit" name="submit" value="go" style="height:48px;width:48px">
+  
+  <div style="width:100%">
+<div class="message"><?php if(isset($message)) { echo $message; } ?></div>
+<table border="1" cellpadding="20" cellspacing="1" width="100%" >
+<tr class="tableheader" align="center">
+<td width="20%"><font size="4">HEADLINE</font></td>
+<td width="28%"><font size="4">DETAILS</font></td>
+
+</tr>
+<?php
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+if($i%2==0)
+$classname="evenRow";
+else
+$classname="oddRow";
+?>
+<tr class="<?php if(isset($classname)) echo $classname;?>">
+<td><font size="3"><?php echo $row["headline"]; ?></font></td>
+<td><font size="3"><?php echo $row["description"]; ?><br><br></font></td>
+</tr>
+<?php
+$i++;
+}
+?>
+</table>
+</form>
+</div>
+</div>
+</body>
+</html>
+

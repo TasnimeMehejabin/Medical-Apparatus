@@ -1,0 +1,107 @@
+
+  
+<html>
+<head>
+<style>
+.error {color: #FF0000;}
+.main{width:800px;height:900px;background-color:transparent;overflow:hidden;font-size:20px;margin:0px auto;}
+.header{
+width:50%;
+margin:50px auto 0px;
+color:white;
+background:#9Ec52C;
+text-align:center;
+border:1px solid #B0C4DE;
+border-bottom:none;
+border-radius:10px 10px 0px 0px;
+padding:20px;}
+form,.content{
+width:50%;
+margin:0px auto;
+padding:20px;
+border:1px solid #B0C4DE;
+border-radius:0px 0px 10px 10px;
+background:white;
+
+}
+.input-group{
+margin:10px 0px 10px 0px;
+}
+.input-group label{
+margin:3px;
+display:block;
+text-align:left;
+}
+.input-group input{
+height:40px;
+width:93%;
+padding:5px 10px;
+font-size:16px;
+border-radius:5px;
+border:1px solid gray;
+}
+.btn{
+padding:10px;
+font-size:15px;
+color:white;
+background:#9EC52C;
+border:none;
+border-radius:5px;
+}
+.error{
+width:92%;
+margin:0px auto;
+padding:10px;
+color:#a94442;
+background:#f2dede;
+border-radius:5px;
+text-align:center;
+}
+</style>
+</head>
+
+
+<body style="background:url(images/4.jpg);background-repeat:no-repeat;background-size:cover;">
+	<div class="main">
+
+				<div class="header">
+					<h2>Patient Registration</h2>
+				</div>
+
+				<form method="post" action="action.php"> 
+				
+						<div class="input-group">
+						<label>Name:</label>
+						<input type="text" name="name" value="" required>
+						</div>
+						  <div class="input-group">
+						<label>Address:</label>
+						<input type="text" name="address" value="" required>
+						</div>
+						<div class="input-group">
+						<label>Contact No:</label>
+						<input type="text" name="no" value="" required>
+						</div>
+						  <div class="input-group1">
+						  <label>Gender:</label>
+						  <input type="radio" name="gender" value="female">Female
+						  <input type="radio" name="gender" value="male">Male
+						</div>
+						<div class="input-group">
+						<label>Password:</label>
+						<input type="text" name="password" value="" required>
+						</div>
+						 <div class="input-group">
+						<label>Email:</label>
+						<input type="text" name="email" value="" required>
+						</div>
+						<div class="input-group">
+						<button type="submit" name="register" class="btn">Register </button>
+						</div>
+
+				</form>
+
+</div>
+
+</body>
+</html>

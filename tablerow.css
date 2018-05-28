@@ -1,0 +1,21 @@
+.tableheader{
+background-color: #f6d859;
+font-size: 12px;
+font-weight: bold;
+}
+.tablerow{
+background-color: #D0E1F5;
+font-size: 12px;
+color: #101010;
+}
+.evenrow{
+background-color: #D7DBDD;
+font-size: 12px;
+color: #101010;
+}
+.oddrow{
+background-color: #B3E8FF;
+font-size: 12px;
+color: #101010;
+}
+
